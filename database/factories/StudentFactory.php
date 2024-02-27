@@ -23,7 +23,8 @@ class StudentFactory extends Factory
             'email'=>$this->faker->safeemail(),
             'age'=>$this->faker->numberbetween(15,20),
             'phone'=>$this->faker->mobilenumber(),
-            'city'=>$this->faker->cityname()
+            'city'=>$this->faker->cityname(),
+            'school_id'=>$this->faker->numberbetween(1,10)
             
         ];
     }

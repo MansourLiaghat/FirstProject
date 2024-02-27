@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class School extends Model
 {
     use HasFactory;
+    public function Students(){
+        return $this->hasMany(Student::class);
+    }
+    public function teachers(){
+        return $this->belongsToMany(Teacher::class);
+    }
 }

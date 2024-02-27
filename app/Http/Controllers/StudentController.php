@@ -13,17 +13,41 @@ class StudentController extends Controller
         return view('index' , compact('students'));
     }
 
-    public function store(Request $request){
+    public function create()
+    {
+        return view('student_create');
+    }
+
+    public function store(Request $request)
+    {
         $student = Student::find($request->enterId);
+        if(!$student){
+            $student = Student::create($request->all());
+            /* The construct command can also be given as an array */
+        }
         return view('student_show' , compact('student'));
     }
 
-    public function edit(User $id){
-        dd($id);
+    public function show(string $id)
+    {
 
     }
 
-    public function update(){
+    public function edit(Student $student){
+        return view('student_edit' , compact('student'));
+    }
 
+    public function update(Request $request, string $student){
+        $student = Student::find($student);
+        $student->update($request->all());
+        return redirect()->route('student.index');
+    }
+
+    public function destroy(string $student)
+    {
+        $student = Student::find($student);
+        $student->delete();      
+        return redirect()->route('student.index');
+  
     }
 }

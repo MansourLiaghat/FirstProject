@@ -6,16 +6,16 @@
     <title>صفحه نخست</title>
 </head>
 <body>
-    <h1>سامانه هوشمند کارنامه</h1>
-    <h3>لطفا شناسه دانش آموز را وارد نمایید</h3>
+    <h1>سامانه هوشمند کارنامه</h1></br>
 
     <form action="{{route('student.store')}}" method="POST">
         @csrf
 
         <input type="text" name="enterId" value="" placeholder="شناسه دانش آموز را وارد نمائید">
-        <button type="submit">ذخیره</button>
+        <button type="submit">نمایش</button>
 
     </form>
+    </br></br><a href="{{route('student.create')}}"><button type="submit">ثبت دانش آموز جدید</button></a>
 
 </br></br>
 

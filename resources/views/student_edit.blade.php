@@ -7,16 +7,19 @@
 </head>
 <body>
 
-<form action="" method="">
+<form action="{{route('student.update' , $student->id)}}" method="POST">
     @csrf
-<input type="text" name="name" value="{{$student->name}}"></br>
-<input type="text" name="national_code" value="{{$student->national_code}}"></br>
-<input type="text" name="email" value="{{$student->email}}"></br>
-<input type="text" name="age" value="{{$student->age}}"></br>
-<input type="text" name="phone" value="{{$student->phone}}"></br>
-<input type="text" name="city" value="{{$student->city}}"></br>
+<input type="text" name="name" value="{{$student->name}}"></br></br>
+<input type="text" name="national_code" value="{{$student->national_code}}"></br></br>
+<input type="text" name="email" value="{{$student->email}}"></br></br>
+<input type="text" name="age" value="{{$student->age}}"></br></br>
+<input type="text" name="phone" value="{{$student->phone}}"></br></br>
+<input type="text" name="city" value="{{$student->city}}"></br></br></br></br>
+<button type="submit">ذخیره</button></br></br>
 
 </form>
-    
+
+<a href="{{route('student.index')}}"><button type="submit">صفحه نخست</button></a>
+
 </body>
 </html>
